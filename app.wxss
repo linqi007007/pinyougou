@@ -1,0 +1,24 @@
+
+@import "./styles/iconfont.wxss";
+/* 全局配置样式 */
+page,
+view,
+text,
+swiper,
+swiper-itme,
+image,
+navigator {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* 主题样式 */
+page{
+    /* 主题颜色 通过变量来定义 */
+    --themeColor:#eb4450;
+    /* 主题字体 */
+    font-size: 28rpx;
+}
+image{
+    width: 100%;
+}
