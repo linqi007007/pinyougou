@@ -51,14 +51,15 @@ Page({
   },
   //点击加入购物车的方法
   handleCartAdd(){
-    //1获取本地存储里购物车的数据,如果没有返回空数组
+    //1获取本地存储里购物车的数据,如果没有,返回空数组
     let cart=wx.getStorageSync('cart')||[];
     //2获取第一个符合(本地存储的goods_id 和当前商品对象goods_id一致)的元素索引值,如果没有,将返回-1
     let index=cart.findIndex(v=>v.goods_id===this.GoodsInfo.goods_id);
     //判断index是否等于-1
     if(index===-1){
       //是-1代表不存在,那么就要把数据第一次存入本地存储
-      this.GoodsInfo.num=1;
+      this.GoodsInfo.num=1;//加个属性,表示此商品有几个
+      this.GoodsInfo.checked=true;
       cart.push(this.GoodsInfo);
       
     }else{
