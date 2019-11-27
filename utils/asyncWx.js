@@ -79,3 +79,38 @@ export const showToast = ({ title }) => {
     })
 }
 
+/**
+ * promise 形式的 wx.login
+ */
+export const login = () => {
+    return new Promise((resolve, reject) => {
+        wx.login({
+            timeout: 10000,
+            success: (result) => {
+                resolve(result)
+
+            },
+            fail: (err) => {
+                reject(err)
+            }
+        });
+    })
+}
+
+/**
+ * promise 形式的 wx.requestPayment
+ * @param {object} param0 支付所必要的参数
+ */
+export const requestPayment = (pay) => {
+    return new Promise((resolve, reject) => {
+        wx.requestPayment({
+            ...pay,
+            success: (result) => {
+                resolve(result);
+            },
+            fail: (err) => {
+                reject(err)
+            }
+        });
+    })
+}
