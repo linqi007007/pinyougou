@@ -89,6 +89,20 @@
 					"id": -1,
 					"name": "授权支付页面",
 					"pathName": "pages/auth/auth",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登录页面",
+					"pathName": "pages/login/login",
 					"scene": null
 				}
 			]

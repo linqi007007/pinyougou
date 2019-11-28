@@ -43,8 +43,8 @@ Page({
         });
         return;
       }
-      //创建订单 -准备请求头参数
-      const header = { Authorization: token };
+      //创建订单 -准备请求头参数//优化了,把headr 放到了request文件方法中去控制了.
+      //const header = { Authorization: token };
       //创建订单 -准备请求体参数
       const order_price = this.data.totalPrice;
       const consignee_addr = this.data.address.all;
@@ -59,14 +59,18 @@ Page({
       })
       const orderParams = { order_price, consignee_addr, goods }
       //发送请求,创建订单,获取订单编号
-      let { order_number } = await request({ url: "/my/orders/create", method: "POST", data: orderParams, header });
+      let { order_number } = await request({ url: "/my/orders/create", method: "POST", data: orderParams });
       //发起预支付的接口
-      let { pay } = await request({ url: "/my/orders/req_unifiedorder", method: "POST", data: { order_number }, header })
+      let { pay } = await request({ url: "/my/orders/req_unifiedorder", method: "POST", data: { order_number } })
       //发起微信支付
       await requestPayment(pay);
       //确定最后的订单状态
-      const res = await request({ url: "/my/orders/chkOrder", method: "POST", data: { order_number }, header })
+      const res = await request({ url: "/my/orders/chkOrder", method: "POST", data: { order_number } })
       await showToast({ title: "支付成功" });
+      //手动删除缓存中已经支付过的商品
+      let newCart=wx.getStorageSync("cart");
+      newCart=newCart.filter(v=>!v.checked);
+      wx.getStorageSync("cart",newCart);
       //跳转到订单页面
       wx.navigateTo({
         url: '/pages/order/order'
