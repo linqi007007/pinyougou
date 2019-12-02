@@ -15,11 +15,11 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
-  .icon-shoucang:before {
+  .icon-shoucang1:before {
     content: "\e631";
   }
   
-  .icon-shoucang1:before {
+  .icon-shoucang:before {
     content: "\e66d";
   }
   
