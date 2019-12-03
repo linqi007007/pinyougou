@@ -60,14 +60,14 @@
 				{
 					"id": -1,
 					"name": "商品列表",
-					"pathName": "pages/goods_list/goods_list",
+					"pathName": "pages/goods_list/index",
 					"query": "cid=5",
 					"scene": null
 				},
 				{
 					"id": -1,
 					"name": "商品详情页",
-					"pathName": "pages/goods_detail/goods_detail",
+					"pathName": "pages/goods_detail/index",
 					"query": "goods_id=43986",
 					"scene": null
 				},
@@ -125,6 +125,12 @@
 					"name": "搜索",
 					"pathName": "pages/search/search",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "意见反馈",
+					"pathName": "pages/feedback/feedback",
 					"scene": null
 				}
 			]

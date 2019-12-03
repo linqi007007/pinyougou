@@ -1,13 +1,13 @@
 <view>
-    <w-SearchInput />
+    <SearchInput />
     <!-- 监听自定义事件 -->
-    <w-Tabs tabs="{{tabs}}" bind:tabsItemChange="handleTabsItemChange">
+    <Tabs tabs="{{tabs}}" bind:tabsItemChange="handleTabsItemChange">
         <block wx:if="{{tabs[0].isActive}}">
             <view class="first_tab">
                 <navigator class="goods_item"
                     wx:for="{{goodsList}}"
                     wx:key="goods_id" 
-                    url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}"
+                    url="/pages/goods_detail/index?goods_id={{item.goods_id}}"
                 >
                     <!-- 左侧图片容器 -->
                     <view class="goods_img_wrap">
@@ -23,5 +23,5 @@
         </block>
         <block wx:elif="{{tabs[1].isActive}}">1</block>
         <block wx:elif="{{tabs[2].isActive}}">2</block>
-    </w-Tabs>
+    </Tabs>
 </view>

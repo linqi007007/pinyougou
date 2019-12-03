@@ -2,8 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/category/category",
-    "pages/goods_list/goods_list",
-    "pages/goods_detail/goods_detail",
+    "pages/goods_list/index",
+    "pages/goods_detail/index",
     "pages/cart/cart",
     "pages/collect/collect",
     "pages/order/order",
